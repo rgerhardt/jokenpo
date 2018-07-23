@@ -2,23 +2,23 @@ package com.rgerhardt.jokenpo;
 
 public class Judge {
 
-    public MatchResult evaluate(String player1Hand, String player2Hand) {
-        if(player1Hand.equals("scissors") && player2Hand.equals("paper")) {
+    public MatchResult evaluate(Hand player1, Hand player2) {
+        if(player1.equals(Hand.SCISSORS) && player2.equals(Hand.PAPER)) {
             return MatchResult.PLAYER1;
         }
-        else if(player1Hand.equals("paper") && player2Hand.equals("scissors")) {
+        else if(player1.equals(Hand.PAPER) && player2.equals(Hand.SCISSORS)) {
             return MatchResult.PLAYER2;
         }
-        else if(player1Hand.equals("paper") && player2Hand.equals("rock")) {
+        else if(player1.equals(Hand.PAPER) && player2.equals(Hand.ROCK)) {
             return MatchResult.PLAYER1;
         }
-        else if(player1Hand.equals("rock") && player2Hand.equals("paper")) {
+        else if(player1.equals(Hand.ROCK) && player2.equals(Hand.PAPER)) {
             return MatchResult.PLAYER2;
         }
-        else if(player1Hand.equals("rock") && player2Hand.equals("scissors")) {
+        else if(player1.equals(Hand.ROCK) && player2.equals(Hand.SCISSORS)) {
             return MatchResult.PLAYER1;
         }
-        else if(player1Hand.equals("scissors") && player2Hand.equals("rock")) {
+        else if(player1.equals(Hand.SCISSORS) && player2.equals(Hand.ROCK)) {
             return MatchResult.PLAYER2;
         }
         else {

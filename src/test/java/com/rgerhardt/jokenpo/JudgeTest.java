@@ -16,45 +16,44 @@ public class JudgeTest {
 
     @Test
     public void returnDrawIfHandsAreEqual() {
-        String possibleHands[] = {"paper", "rock", "scissor"};
-        for(String hand: possibleHands) {
+        for(Hand hand: Hand.values()) {
             assertEquals(MatchResult.DRAW, judge.evaluate(hand, hand));
         }
     }
 
     @Test
     public void returnPlayer1IfHandsAreScissorsAndPaper() {
-        MatchResult result = judge.evaluate("scissors", "paper");
+        MatchResult result = judge.evaluate(Hand.SCISSORS, Hand.PAPER);
         assertEquals(MatchResult.PLAYER1, result);
     }
 
     @Test
     public void returnPlayer2IfHandsArePaperAndScissors() {
-        MatchResult result = judge.evaluate("paper","scissors");
+        MatchResult result = judge.evaluate(Hand.PAPER,Hand.SCISSORS);
         assertEquals(MatchResult.PLAYER2, result);
     }
 
     @Test
     public void returnPlayer1IfHandsArePaperAndRock() {
-        MatchResult result = judge.evaluate("paper", "rock");
+        MatchResult result = judge.evaluate(Hand.PAPER, Hand.ROCK);
         assertEquals(MatchResult.PLAYER1, result);
     }
 
     @Test
     public void returnPlayer2IfHandsAreRockAndPaper() {
-        MatchResult result = judge.evaluate("rock", "paper");
+        MatchResult result = judge.evaluate(Hand.ROCK, Hand.PAPER);
         assertEquals(MatchResult.PLAYER2, result);
     }
 
     @Test
     public void returnPlayer1IfHandsAreRockAndScissors() {
-        MatchResult result = judge.evaluate("rock", "scissors");
+        MatchResult result = judge.evaluate(Hand.ROCK, Hand.SCISSORS);
         assertEquals(MatchResult.PLAYER1, result);
     }
 
     @Test
     public void returnPlayer2IfHandsAreScissorsAndRock() {
-        MatchResult result = judge.evaluate("scissors", "rock");
+        MatchResult result = judge.evaluate(Hand.SCISSORS, Hand.ROCK);
         assertEquals(MatchResult.PLAYER2, result);
     }
 
