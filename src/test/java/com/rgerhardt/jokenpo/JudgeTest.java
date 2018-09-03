@@ -1,15 +1,16 @@
 package com.rgerhardt.jokenpo;
 
-import org.junit.Before;
-import org.junit.Test;
 
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class JudgeTest {
 
     private Judge judge;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         judge = new Judge();
     }
